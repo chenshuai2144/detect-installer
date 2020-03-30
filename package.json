@@ -10,7 +10,7 @@
   "files": [
     "dist"
   ],
-  "repository": "detect-installler",
+  "repository": "https://github.com/chenshuai2144/detect-installer.git",
   "scripts": {
     "build": "tsc",
     "test": "node test.js",
