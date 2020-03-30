@@ -16,7 +16,7 @@ const equalArray = (list, list2) => {
 packages.map(package => {
   const key = Object.keys(package)[0];
   const file = path.join(__dirname, 'example', key);
-  const packageList = test.default(file);
+  const packageList = test(file);
   console.log('路径：' + file);
   console.log('可使用的包：' + packageList);
   if (!equalArray(package[key], packageList)) {
