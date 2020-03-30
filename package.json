@@ -1,6 +1,6 @@
 {
   "name": "detect-installer",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Determine what package manager should be used",
   "main": "dist/index.js",
   "authors": {
