@@ -1,11 +1,27 @@
 import { join } from 'path';
+import { execSync } from 'child_process';
 import { existsSync, readFileSync, lstatSync } from 'fs';
 
 function haveFile(cwd: string, fileName: string) {
   return existsSync(join(cwd, fileName));
 }
 
-export default function(cwd: string) {
+/**
+ * 判断这个包管理器是否存在
+ * @param packageName
+ */
+const hasPackageCommand = (packageName: string) => {
+  try {
+    execSync(`${packageName} -v`, {
+      stdio: 'inherit',
+    });
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+const detectInstaller = function(cwd: string) {
   // 没有 package.json 或 node_modules，判断不出。
   if (!haveFile(cwd, 'package.json') || !haveFile(cwd, 'node_modules')) {
     return [];
@@ -47,4 +63,6 @@ export default function(cwd: string) {
 
   // 检测不到。
   return [];
-}
+};
+detectInstaller.hasPackageCommand = hasPackageCommand;
+module.exports = detectInstaller;
