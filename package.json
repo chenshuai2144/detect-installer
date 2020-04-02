@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Determine what package manager should be used",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "authors": {
     "name": "chenshuai2144",
     "email": "qixian.cs@outlook.com"
