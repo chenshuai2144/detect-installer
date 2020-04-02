@@ -64,5 +64,8 @@ const detectInstaller = function(cwd: string) {
   // 检测不到。
   return [];
 };
+
+export default detectInstaller;
+
 detectInstaller.hasPackageCommand = hasPackageCommand;
 module.exports = detectInstaller;
